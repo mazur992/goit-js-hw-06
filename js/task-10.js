@@ -11,6 +11,7 @@ btnCreateEl.addEventListener("click", () => createBoxes());
 btnDestroyEl.addEventListener("click", () => {
   btnCreateEl.removeEventListener("click", createBoxes);
   destroyBoxes();
+  inputNumberEl.value = "";
 });
 
 function createBoxes() {
