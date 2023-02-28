@@ -3,9 +3,8 @@ const textOutputEl = document.querySelector("#name-output");
 
 textInputEl.addEventListener("input", (event) => {
   textOutputEl.textContent = event.currentTarget.value;
+  if (event.currentTarget.value === "") textOutputEl.textContent = "Anonymous";
 });
 textInputEl.addEventListener("blur", (event) => {
-  if (event.currentTarget.value === "") {
-    textOutputEl.textContent = "Anonymous";
-  }
+  textInputEl.removeEventListener("input", () => {});
 });
